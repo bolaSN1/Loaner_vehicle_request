@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action_layout_item">
+    <sys_ux_form_action_layout_item action="INSERT_OR_UPDATE">
+        <action display_value="Save">fa00b4c3531020101829ddeeff7b1221</action>
+        <active>true</active>
+        <color>primary</color>
+        <description/>
+        <icon/>
+        <item_type>action</item_type>
+        <label>Save</label>
+        <layout_group/>
+        <name>Save</name>
+        <order>-10000</order>
+        <overflow>false</overflow>
+        <sys_class_name>sys_ux_form_action_layout_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-12 17:13:25</sys_created_on>
+        <sys_id>f5fabebe9782c69094ef32b6f053af2f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Save</sys_name>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1138634_lva">43447d159702ce5094ef32b6f053af3f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">43447d159702ce5094ef32b6f053af3f</sys_scope>
+        <sys_update_name>sys_ux_form_action_layout_item_f5fabebe9782c69094ef32b6f053af2f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-12 17:13:25</sys_updated_on>
+        <table>sys_template</table>
+    </sys_ux_form_action_layout_item>
+</record_update>
