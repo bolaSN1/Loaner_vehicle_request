@@ -4,55 +4,41 @@
             <element>actual_return_date</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-05-08 02:38:09</sys_created_on>
-            <sys_id>314c071d97c6ce5094ef32b6f053afbc</sys_id>
+            <sys_created_on>2024-05-15 01:28:39</sys_created_on>
+            <sys_id>fb7fb6a79742ca9094ef32b6f053af6b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1138634_lva_vehicle_tracker" sys_domain="global" view="Default view">cb38c79597c6ce5094ef32b6f053afea</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-05-08 02:38:09</sys_updated_on>
+            <sys_updated_on>2024-05-15 01:28:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>return_vehicle_status</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-15 01:28:39</sys_created_on>
+            <sys_id>737fb6a79742ca9094ef32b6f053af6c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1138634_lva_vehicle_tracker" sys_domain="global" view="Default view">cb38c79597c6ce5094ef32b6f053afea</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-15 01:28:39</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>return_notes</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-05-08 02:38:09</sys_created_on>
-            <sys_id>b54c071d97c6ce5094ef32b6f053afbc</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1138634_lva_vehicle_tracker" sys_domain="global" view="Default view">cb38c79597c6ce5094ef32b6f053afea</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-05-08 02:38:09</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-05-08 02:38:09</sys_created_on>
-            <sys_id>3d4c071d97c6ce5094ef32b6f053afbc</sys_id>
+            <sys_created_on>2024-05-15 01:28:39</sys_created_on>
+            <sys_id>f77fb6a79742ca9094ef32b6f053af6c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1138634_lva_vehicle_tracker" sys_domain="global" view="Default view">cb38c79597c6ce5094ef32b6f053afea</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-05-08 02:38:09</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>return_vehicle_status</element>
-            <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-05-08 02:38:09</sys_created_on>
-            <sys_id>b14c071d97c6ce5094ef32b6f053afbd</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1138634_lva_vehicle_tracker" sys_domain="global" view="Default view">cb38c79597c6ce5094ef32b6f053afea</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-05-08 02:38:09</sys_updated_on>
+            <sys_updated_on>2024-05-15 01:28:39</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
