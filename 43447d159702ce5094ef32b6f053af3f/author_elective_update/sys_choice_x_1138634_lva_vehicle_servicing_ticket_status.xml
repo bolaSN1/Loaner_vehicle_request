@@ -53,24 +53,5 @@
             <sys_updated_on>2024-05-09 03:39:32</sys_updated_on>
             <value>Closed</value>
         </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>ticket_status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Cancelled</label>
-            <language>en</language>
-            <name>x_1138634_lva_vehicle_servicing</name>
-            <sequence>2</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-05-09 04:00:06</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-05-09 04:00:06</sys_updated_on>
-            <value>Cancelled</value>
-        </sys_choice>
     </sys_choice>
 </record_update>
