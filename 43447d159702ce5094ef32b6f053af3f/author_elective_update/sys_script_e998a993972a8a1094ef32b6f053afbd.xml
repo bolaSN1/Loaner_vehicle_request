@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1138634_lva_vehicle_tracker</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1138634_lva_vehicle_tracker">vehicle_status=Sent for Servicing^EQ<item display_value="Sent for Servicing" endquery="false" field="vehicle_status" goto="false" newquery="false" operator="=" or="false" value="Sent for Servicing"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Vehicle query sys id on vehicle tracker </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    // variable for a new GlideRecord on the servicing table
+    var gr = new GlideRecord('x_1138634_lva_vehicle_servicing');
+	//Query the servicing table for the current sys_id of the record that is in the vehicle tracker field
+	gr.addQuery('vehicle_tracker', current.sys_id);
+	//Query the servicing table for records where the tracker status is open
+	gr.addQuery('tracker_status','Open');
+    //Execute the query
+	gr.query();
+    //if no matching records are found from the previous query move on 
+	if (!gr.next()) {
+		// new variable for a new GlideRecord on 'x_1138634_lva_vehicle_servicing' 
+		var createticket = new GlideRecord('x_1138634_lva_vehicle_servicing');
+        //new GlideDate that will get the current date
+		var gd = new GlideDate();
+        //Initialize the creation of a new record on the servicing table
+		createticket.initialize();
+        //Set the value of vehicle tracker to the current records sys_id
+		createticket.setValue('vehicle_tracker',current.sys_id);
+        //Set the value of vehicle to the current records vehicle value
+		createticket.setValue('vehicle', current.vehicle);
+		//Set the value of vehicle status to in service
+        createticket.setValue('vehicle_status', 'In Service');
+		//Set the value of date sent for servicing to the current date
+        createticket.setValue('date_sent_for_servicing', gd.getValue());
+		//Set the value of ticket status to open
+        createticket.setValue('ticket_status','Open');
+        //Insert the new record
+		createticket.insert();
+	}
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-07 21:03:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e998a993972a8a1094ef32b6f053afbd</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Vehicle query sys id on vehicle tracker </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1138634_lva">43447d159702ce5094ef32b6f053af3f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">43447d159702ce5094ef32b6f053af3f</sys_scope>
+        <sys_update_name>sys_script_e998a993972a8a1094ef32b6f053afbd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-08 19:05:33</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=e998a993972a8a1094ef32b6f053afbd"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Loaner Vehicle Request and Inventory">43447d159702ce5094ef32b6f053af3f</application>
+        <file_path/>
+        <instance_id>e82a8b1bdb0efb884d2bac44d49619ed</instance_id>
+        <instance_name>dev88375</instance_name>
+        <name>sys_script_e998a993972a8a1094ef32b6f053afbd</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_1138634_lva_vehicle_tracker&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="x_1138634_lva_vehicle_tracker"&gt;vehicle_status=Sent for Servicing^EQ&lt;item display_value="Sent for Servicing" endquery="false" field="vehicle_status" goto="false" newquery="false" operator="=" or="false" value="Sent for Servicing"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Vehicle query sys id on vehicle tracker &lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    // variable for a new GlideRecord on the servicing table
+    var gr = new GlideRecord('x_1138634_lva_vehicle_servicing');
+	//Query the servicing table for the current sys_id of the record that is in the vehicle tracker field
+	gr.addQuery('vehicle_tracker', current.sys_id);
+	//Query the servicing table for records where the tracker status is open
+	gr.addQuery('tracker_status','Open');
+    //Execute the query
+	gr.query();
+    //if no matching records are found from the previous query move on 
+	if (!gr.next()) {
+		// new variable for a new GlideRecord on 'x_1138634_lva_vehicle_servicing' 
+		var createticket = new GlideRecord('x_1138634_lva_vehicle_servicing');
+        //new GlideDate that will get the current date
+		var gd = new GlideDate();
+        //Initialize the creation of a new record on the servicing table
+		createticket.initialize();
+        //Set the value of vehicle tracker to the current records sys_id
+		createticket.setValue('vehicle_tracker',current.sys_id);
+        //Set the value of vehicle to the current records vehicle value
+		createticket.setValue('vehicle', current.vehicle);
+		//Set the value of vehicle status to in service
+        createticket.setValue('vehicle_status', 'In Service');
+		//Set the value of date sent for servicing to the current date
+        createticket.setValue('date_sent_for_servicing', gd.getValue());
+		//Set the value of ticket status to open
+        createticket.setValue('ticket_status','Open');
+        //Insert the new record
+		createticket.insert();
+	}
+
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-07 21:03:23&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e998a993972a8a1094ef32b6f053afbd&lt;/sys_id&gt;&lt;sys_mod_count&gt;35&lt;/sys_mod_count&gt;&lt;sys_name&gt;Vehicle query sys id on vehicle tracker &lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1138634_lva"&gt;43447d159702ce5094ef32b6f053af3f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Loaner Vehicle Request and Inventory"&gt;43447d159702ce5094ef32b6f053af3f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_e998a993972a8a1094ef32b6f053afbd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-08 19:05:33&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e998a993972a8a1094ef32b6f053afbd"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>154609147</payload_hash>
+        <record_name>Vehicle query sys id on vehicle tracker </record_name>
+        <reverted_from/>
+        <source>103cf1519742ce5094ef32b6f053af03</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-08 19:05:33</sys_created_on>
+        <sys_id>ff87dae397a20e1094ef32b6f053afa8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18ff93de1ff0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-08 19:05:33</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>b387dae338a20e1021e6b210203f43a8</update_guid>
+        <update_guid_history>b387dae338a20e1021e6b210203f43a8:154609147,f0171ea31ea20e101a4d643c34cb6c96:738120944,1f769eefa4620e10e4ac43164ab85832:1774996738,20749aef67620e1065922b770c5a0ee4:1821030860,f0049eaf91620e10586109b572a351d5:1972336972,63cf8a6b01620e10d8a3c3e650dd83f7:-855613203,1f5f862bf8620e1035ec4e95d1510dba:-698486412,4e9e0e63d1620e10c6739ca043e48163:761189452,c75ec6e7a7620e10b27926ffc093e904:-698486412,c34e86e79a620e10f2e6e12eda43b26d:-756630746,acbdcea3d7620e10adfdffc28d8da1f4:-1669216794,b12a8e63d5620e1031bfe31f7a7711ec:1921622879,5c0a8a23c4620e10545526d96cbd6567:619870538,a15906237a620e1077ebc5921a57235f:-390801429,f9390aeffa220e1099b45a5212b3496e:1024225483,8eb84aafc5220e10d2b1a2c0121bded6:2126998003,2d5842efd5220e1035b1618a94d0ecd8:1834076376,d8a74aebfd220e10a3e064fae3c51982:1751734055,d4978e6f83220e10b0986d3c04edfeb7:470661945,94150aab3d220e107717236cfce2e9ca:2085144782,3ec4c2abd2220e10b87fbe8e9dd7b355:534029183,71744a6b93220e10acf81466cd687d8d:-529132677,0224022bfc220e10f20ecd93a311ddeb:534029183,e090422784220e10c674d604d700edb5:751235847,a24ffd233c220e10f42dda80188d26dc:1856154599,4b2ebd23e5220e10cc64773966c2562b:-220748136,a81df5eb4eeeca103362a8bfec402acf:-1239417171,75e7bde70eeeca10ff42f5389b87e67a:965774441,1d53f96313eeca1073445b7516feeee0:-2116629500,d833f56303eeca10cdf4bc23076c5f16:-995992796,1713b92362eeca10d7ca1d7b424cde67:-2062767483,c592f9efc2aeca1010055ed579853491:-995992796,06eda56ba9aeca1024731c79133e3ebb:-706660438,207a6d6fed6eca10e97ee1134b9b5505:1631804760,a3b5fd1be7aa8a1033b6a76aaf63a7e4:575640015,c8f821d7576a8a1017fa65b9eb9d2e75:-252234789</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-08 19:10:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>39fcddee3d3143eb93e126e734266039</sys_id>
+        <sys_metadata>e998a993972a8a1094ef32b6f053afbd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Vehicle query sys id on vehicle tracker </sys_name>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1138634_lva">43447d159702ce5094ef32b6f053af3f</sys_package>
+        <sys_parent display_value="Vehicle Tracker">dfff7a999786ce5094ef32b6f053af2c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">43447d159702ce5094ef32b6f053af3f</sys_scope>
+        <sys_scope_delete display_value="">e6e326bea61140a4998e8ed49850cfe4</sys_scope_delete>
+        <sys_update_name>sys_script_e998a993972a8a1094ef32b6f053afbd</sys_update_name>
+        <sys_update_version display_value="sys_script_e998a993972a8a1094ef32b6f053afbd">ff87dae397a20e1094ef32b6f053afa8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-08 19:10:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
